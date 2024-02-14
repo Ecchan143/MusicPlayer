@@ -1,0 +1,113 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #f0f0f0;
+    color: #333;
+}
+
+.container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+#musicPlayer {
+    width: 100%;
+    max-width: 100%;
+    background-color: #3498db;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+#currentMusicLabel {
+    margin-top: 10px;
+    color: #3498db;
+}
+
+#nextButton,
+#backButton,
+#toggleRandom {
+    display: inline-block; /* Use inline-block to make them sit next to each other */
+    margin: 10px 5px; /* Adjust margin as needed */
+    background-color: #3498db;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    cursor: pointer;
+}
+
+#nextButton:hover,
+#backButton:hover,
+#toggleRandom:hover {
+    background-color: #2980b9;
+}
+
+h2 {
+    margin: 20px 0;
+    color: #3498db;
+}
+
+#playlist {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 10px;
+}
+
+#playlist li {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: center;
+    background-color: #fff;
+    color: #333;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#playlist li:hover {
+    background-color: #f0f0f0;
+}
+
+@media (max-width: 600px) {
+    #playlist {
+        grid-template-columns: 1fr;
+    }
+
+    #nextButton,
+    #backButton,
+    #toggleRandom {
+        width: 100%;
+        margin: 10px 0; /* Adjust margin for responsiveness */
+    }
+}
+
+#playlist li.playing {
+    animation: highlight 1s ease-out;
+}
+
+@keyframes highlight {
+    0% {
+        background-color: #3498db;
+        color: #fff;
+    }
+    50% {
+        background-color: #2ecc71;
+        color: #fff;
+    }
+    100% {
+        background-color: #3498db;
+        color: #fff;
+    }
+}
